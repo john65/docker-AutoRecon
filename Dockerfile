@@ -30,7 +30,9 @@ ENV DEBIAN_FRONTEND noninteractive
 #    && apt-get clean
 RUN set -x \
     && apt-get -yqq update \
-    && apt install -y python3-toml wkhtmltopdf python3-colorama seclists hydra medusa whatweb gobuster nikto dirb wpscan enum4linux nbtscan smbmap onesixtyone git nmap curl oscanner smbclient smtp-user-enum sslscan tnscmd10g \
+    && apt install -y python3-toml wkhtmltopdf python3-colorama seclists hydra medusa whatweb gobuster nikto dirb wpscan enum4linux nbtscan smbmap onesixtyone git nmap curl oscanner smbclient smtp-user-enum sslscan tnscmd10g wordlists dirbuster \
     && git clone https://github.com/Tib3rius/AutoRecon.git
+
+RUN chmod +x /AutoRecon/autorecon.py
 
 CMD ["bash"]
